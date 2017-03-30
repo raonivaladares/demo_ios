@@ -17,6 +17,9 @@ class MainViewController: UITableViewController {
     let alerts = MenuItem(title: "Alerts", imageName: "iconAlert")
   
     menuItems.append(alerts)
+    menuItems.append(alerts)
+    menuItems.append(alerts)
+    menuItems.append(alerts)
     return menuItems
   }
 }
@@ -39,6 +42,10 @@ extension MainViewController {
     cell.build(title: item.title, imageName: item.imageName)
     
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "AlertsSegue", sender: self)
   }
 }
 
