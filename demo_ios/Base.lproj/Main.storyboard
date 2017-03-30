@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aZe-ni-oJW" id="5Hv-Wi-4mI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lVP-j6-B0V">
@@ -83,36 +84,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Qoc-32-eHs">
-                                <rect key="frame" x="129" y="228.5" width="116" height="210"/>
+                                <rect key="frame" x="122" y="199" width="131" height="270"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QJ-St-CAi">
-                                        <rect key="frame" x="41.5" y="0.0" width="33" height="30"/>
+                                        <rect key="frame" x="49" y="0.0" width="33" height="30"/>
                                         <state key="normal" title="Alert"/>
                                         <connections>
                                             <action selector="callAlertAction:" destination="7jR-BM-Kin" eventType="touchUpInside" id="C4n-fS-yQK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q89-RA-nyT">
-                                        <rect key="frame" x="0.0" y="60" width="116" height="30"/>
+                                        <rect key="frame" x="7.5" y="60" width="116" height="30"/>
                                         <state key="normal" title="Alert with choice"/>
+                                        <connections>
+                                            <action selector="callAlertChoiceAction:" destination="7jR-BM-Kin" eventType="touchUpInside" id="vAV-sg-ttM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewr-uF-191">
+                                        <rect key="frame" x="0.0" y="120" width="131" height="30"/>
+                                        <state key="normal" title="Alert Many choices"/>
+                                        <connections>
+                                            <action selector="alertManyChoices:" destination="7jR-BM-Kin" eventType="touchUpInside" id="beK-R9-oeY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRS-p9-5f7">
-                                        <rect key="frame" x="29.5" y="120" width="57" height="30"/>
+                                        <rect key="frame" x="37" y="180" width="57" height="30"/>
                                         <state key="normal" title="popover"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8n-Hv-MGJ">
-                                        <rect key="frame" x="17" y="180" width="82" height="30"/>
+                                        <rect key="frame" x="24.5" y="240" width="82" height="30"/>
                                         <state key="normal" title="Actionsheet"/>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[content]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt2-eo-bNw">
+                                <rect key="frame" x="46" y="84" width="70.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lt2-eo-bNw" firstAttribute="top" secondItem="xT6-Ga-KxF" secondAttribute="bottom" constant="20" id="01R-hy-tMK"/>
                             <constraint firstItem="Qoc-32-eHs" firstAttribute="centerY" secondItem="nli-fI-vqa" secondAttribute="centerY" id="XrI-4k-AnL"/>
                             <constraint firstItem="Qoc-32-eHs" firstAttribute="centerX" secondItem="nli-fI-vqa" secondAttribute="centerX" id="gk9-W3-y8J"/>
+                            <constraint firstItem="lt2-eo-bNw" firstAttribute="leading" secondItem="nli-fI-vqa" secondAttribute="leadingMargin" constant="30" id="lbh-1x-eRa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="choicesLabel" destination="lt2-eo-bNw" id="0ok-i0-CLa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WZ-YZ-cEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
