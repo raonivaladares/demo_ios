@@ -84,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Qoc-32-eHs">
-                                <rect key="frame" x="122" y="199" width="131" height="270"/>
+                                <rect key="frame" x="122" y="229" width="131" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QJ-St-CAi">
                                         <rect key="frame" x="49" y="0.0" width="33" height="30"/>
@@ -107,13 +107,12 @@
                                             <action selector="alertManyChoices:" destination="7jR-BM-Kin" eventType="touchUpInside" id="beK-R9-oeY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRS-p9-5f7">
-                                        <rect key="frame" x="37" y="180" width="57" height="30"/>
-                                        <state key="normal" title="popover"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8n-Hv-MGJ">
-                                        <rect key="frame" x="24.5" y="240" width="82" height="30"/>
-                                        <state key="normal" title="Actionsheet"/>
+                                        <rect key="frame" x="13" y="180" width="105" height="30"/>
+                                        <state key="normal" title="Alert with input"/>
+                                        <connections>
+                                            <action selector="alertWithInputAction:" destination="7jR-BM-Kin" eventType="touchUpInside" id="oYQ-b0-MiD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
