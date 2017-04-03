@@ -15,11 +15,16 @@ class MainViewController: UITableViewController {
   private func menuSource() -> [MenuItem]{
     var menuItems: [MenuItem] = []
     let alerts = MenuItem(title: "Alerts", imageName: "iconAlert")
+    let actionSheet = MenuItem(title: "ActionSheet", imageName: "iconAlert")
+    let popOvers = MenuItem(title: "PopOvers", imageName: "iconAlert")
+    let tables = MenuItem(title: "Tables", imageName: "iconAlert")
+    let notification = MenuItem(title: "Notification", imageName: "iconAlert")
   
     menuItems.append(alerts)
-    menuItems.append(alerts)
-    menuItems.append(alerts)
-    menuItems.append(alerts)
+    menuItems.append(actionSheet)
+    menuItems.append(popOvers)
+    menuItems.append(tables)
+    menuItems.append(notification)
     return menuItems
   }
 }
@@ -45,7 +50,12 @@ extension MainViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    performSegue(withIdentifier: "AlertsSegue", sender: self)
+    switch indexPath.row {
+    case 1:
+      performSegue(withIdentifier: "TablesSegue", sender: self)
+    default:
+      performSegue(withIdentifier: "AlertsSegue", sender: self)
+    }
   }
 }
 

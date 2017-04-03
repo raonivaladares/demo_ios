@@ -65,4 +65,28 @@ class AlertsViewController: UIViewController {
     textField.placeholder = "Write something"
     self.textField = textField
   }
+  
+  @IBAction func actionSheetAction(_ sender: UIButton) {
+    let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+    let normalAction = UIAlertAction(title: "Normal", style: .default, handler: { (action: UIAlertAction!) in
+      let text = "You chose: Normal"
+      self.choicesLabel.text = text
+    })
+    
+    let desctutiveAction = UIAlertAction(title: "Destructive", style: .destructive, handler: { (action: UIAlertAction!) in
+      let text = "You chose: Destrutive"
+      self.choicesLabel.text = text
+    })
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+      let text = "You chose: Cancel"
+      self.choicesLabel.text = text
+    })
+    
+    optionMenu.addAction(normalAction)
+    optionMenu.addAction(desctutiveAction)
+    optionMenu.addAction(cancelAction)
+    self.present(optionMenu, animated: true, completion: nil)
+  }
+  
 }

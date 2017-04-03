@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aZe-ni-oJW" id="5Hv-Wi-4mI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lVP-j6-B0V">
@@ -65,11 +65,37 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="7fX-mx-d4R"/>
                     <connections>
                         <segue destination="7jR-BM-Kin" kind="show" identifier="AlertsSegue" id="PMe-AD-Mfm"/>
+                        <segue destination="IQW-bm-b0V" kind="show" identifier="TablesSegue" id="QO1-cj-nGu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOA-7G-uyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="736.79999999999995" y="807.34632683658174"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oai-wT-hR5">
+            <objects>
+                <viewController id="IQW-bm-b0V" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZZx-Nz-xlr"/>
+                        <viewControllerLayoutGuide type="bottom" id="JxF-2C-KBB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mNb-Mr-jXg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omV-nu-b8b">
+                                <rect key="frame" x="130" y="318" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Call action sheet"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wd-0v-jfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="1086"/>
         </scene>
         <!--Alerts View Controller-->
         <scene sceneID="f01-Iq-nig">
@@ -84,7 +110,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Qoc-32-eHs">
-                                <rect key="frame" x="122" y="229" width="131" height="210"/>
+                                <rect key="frame" x="122" y="199" width="131" height="270"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QJ-St-CAi">
                                         <rect key="frame" x="49" y="0.0" width="33" height="30"/>
@@ -112,6 +138,13 @@
                                         <state key="normal" title="Alert with input"/>
                                         <connections>
                                             <action selector="alertWithInputAction:" destination="7jR-BM-Kin" eventType="touchUpInside" id="oYQ-b0-MiD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjQ-mg-tSN">
+                                        <rect key="frame" x="23.5" y="240" width="84" height="30"/>
+                                        <state key="normal" title="ActionSheet"/>
+                                        <connections>
+                                            <action selector="actionSheetAction:" destination="7jR-BM-Kin" eventType="touchUpInside" id="AFq-UN-MKN"/>
                                         </connections>
                                     </button>
                                 </subviews>
